@@ -1,0 +1,26 @@
+﻿<Window x:Class="Principal.PantallaInicio_Recepcion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Principal"
+        mc:Ignorable="d"
+        Title="PantallaInicio_Recepcion" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnVentas" Content=" VENTAS" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnCuadratura" Content="CUADRATURA" HorizontalAlignment="Left" Margin="0,166,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnHistorialV" Content="HISTORIAL DE VENTAS" HorizontalAlignment="Left" Margin="0,222,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnStock" Content="STOCK" HorizontalAlignment="Left" Margin="0,278,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnUsuarios" Content="USUARIOS" HorizontalAlignment="Left" Margin="0,334,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <TextBox x:Name="txtNombreVendedor" HorizontalAlignment="Left" Height="23" Margin="326,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="txtCodigoRegistro" HorizontalAlignment="Left" Height="23" Margin="326,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="txtCantidadVentas" HorizontalAlignment="Left" Height="23" Margin="326,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="txtCódigoV" HorizontalAlignment="Left" Height="23" Margin="569,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
+        <Label x:Name="lblNombre" Content="Nombre de Vendedor" HorizontalAlignment="Left" Margin="194,94,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCodigo" Content="Código Registro" HorizontalAlignment="Left" Margin="194,123,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="btnCantidadVenta" Content="Cantidad Ventas" HorizontalAlignment="Left" Margin="194,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
+        <Label x:Name="lblCódigoVendedor" Content="Código Vendedor" HorizontalAlignment="Left" Margin="462,22,0,0" VerticalAlignment="Top"/>
+        <DatePicker Margin="642,24,9.6,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

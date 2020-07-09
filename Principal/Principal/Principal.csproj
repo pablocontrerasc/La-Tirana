@@ -57,12 +57,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Prueba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Prueba.Designer.cs">
-      <DependentUpon>Prueba.cs</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,8 +69,64 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PantallaAdministracionUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaCuadratura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaDetalleVenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaGestionVentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaHistorialVenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaInicio-Recepcion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaProductosVendidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaRegistroUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PantallaAdministracionUsuarios.xaml.cs">
+      <DependentUpon>PantallaAdministracionUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaCuadratura.xaml.cs">
+      <DependentUpon>PantallaCuadratura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaDetalleVenta.xaml.cs">
+      <DependentUpon>PantallaDetalleVenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaGestionVentas.xaml.cs">
+      <DependentUpon>PantallaGestionVentas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaHistorialVenta.xaml.cs">
+      <DependentUpon>PantallaHistorialVenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaInicio-Recepcion.xaml.cs">
+      <DependentUpon>PantallaInicio-Recepcion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaProductosVendidos.xaml.cs">
+      <DependentUpon>PantallaProductosVendidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaRegistroUsuario.xaml.cs">
+      <DependentUpon>PantallaRegistroUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
