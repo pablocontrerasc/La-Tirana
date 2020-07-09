@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Principal"
         mc:Ignorable="d"
-        Title="PantallaProductosVendidos" Height="450" Width="800">
+        Title="PantallaProductosVendidos" Height="600" Width="800">
     <Grid>
-        
+        <Button x:Name="btnVentas" Content=" VENTAS" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnCuadratura" Content="CUADRATURA" HorizontalAlignment="Left" Margin="0,166,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnHistorialV" Content="HISTORIAL DE VENTAS" HorizontalAlignment="Left" Margin="0,222,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnStock" Content="STOCK" HorizontalAlignment="Left" Margin="0,278,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnUsuarios" Content="USUARIOS" HorizontalAlignment="Left" Margin="0,334,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Rectangle x:Name="dtFecha" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="162" Margin="156,27,0,0" Stroke="Black" VerticalAlignment="Top" Width="610"/>
+        <TextBox x:Name="txtNombreProducto" HorizontalAlignment="Left" Height="23" Margin="289,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
+        <TextBox x:Name="txtCodigoRegistro" HorizontalAlignment="Left" Height="23" Margin="289,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
+        <TextBox x:Name="txtCódigoV" HorizontalAlignment="Left" Height="23" Margin="533,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
+        <Label x:Name="lblNombre" Content="Nombre Producto" HorizontalAlignment="Left" Margin="157,108,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCodigo" Content="Código Registro" HorizontalAlignment="Left" Margin="157,137,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCódigoVendedor" Content="Código Vendedor" HorizontalAlignment="Left" Margin="431,36,0,0" VerticalAlignment="Top"/>
+        <DatePicker Margin="602,38,46.6,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="447,110,0,0" VerticalAlignment="Top" Width="77" Height="20"/>
+        <DataGrid HorizontalAlignment="Left" Height="289" Margin="156,201,0,0" VerticalAlignment="Top" Width="610"/>
+        <Button x:Name="btnImprimir" Content="Imprimir" HorizontalAlignment="Left" Margin="407,513,0,0" VerticalAlignment="Top" Width="160" Height="37"/>
+
     </Grid>
 </Window>

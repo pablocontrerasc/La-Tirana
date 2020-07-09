@@ -7,8 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="254,211,0,0" VerticalAlignment="Top" Width="234" Height="42"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="273,68,0,0" VerticalAlignment="Top" Width="190" Height="102"/>
-
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="235" Margin="221,107,0,0" Stroke="Black" VerticalAlignment="Top" Width="367"/>
+        <Label x:Name="lblIngreso" Content="Ingresa al Sistema" HorizontalAlignment="Left" Margin="332,121,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="lblUsuario" Content="Usuario" HorizontalAlignment="Left" Margin="247,183,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblContraseña" Content="Contraseña" HorizontalAlignment="Left" Margin="247,226,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="350,226,0,0" VerticalAlignment="Top" Width="145" Height="26"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="26" Margin="350,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+        <Button x:Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" Margin="360,293,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.324,1.083" Height="25"/>
     </Grid>
 </Window>

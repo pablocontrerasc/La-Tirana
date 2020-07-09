@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Principal"
         mc:Ignorable="d"
-        Title="PantallaRegistroUsuario" Height="450" Width="800">
+        Title="PantallaRegistroUsuario" Height="600" Width="800">
     <Grid>
-        
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="365" Margin="243,118,0,0" Stroke="Black" VerticalAlignment="Top" Width="318"/>
+        <Label x:Name="lblRegistro" Content="Registro de Usuario" HorizontalAlignment="Left" Margin="333,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.202,0.375" FontSize="16"/>
+        <Label x:Name="lblNombre" Content="Nombre" HorizontalAlignment="Left" Margin="266,205,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblApellido" Content="Apellido" HorizontalAlignment="Left" Margin="266,246,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblUsuario" Content="Usuario" HorizontalAlignment="Left" Margin="266,285,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblContraseña" Content="Contraseña" HorizontalAlignment="Left" Margin="266,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.563,2.211"/>
+        <ComboBox x:Name="cbxTipoUsuario" HorizontalAlignment="Left" Margin="403,365,0,0" VerticalAlignment="Top" Width="138"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="324,424,0,0" VerticalAlignment="Top" Width="158" Height="40"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="348,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtApellido" HorizontalAlignment="Left" Height="23" Margin="348,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="23" Margin="348,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtContraseña" HorizontalAlignment="Left" Height="23" Margin="348,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <RadioButton x:Name="rbnConfirmacion" Content="Confirmar información" HorizontalAlignment="Left" Margin="403,392,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

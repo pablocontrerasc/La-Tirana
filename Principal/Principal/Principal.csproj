@@ -77,6 +77,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PantallaDetalleBoleta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PantallaDetalleVenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +112,9 @@
     </Compile>
     <Compile Include="PantallaCuadratura.xaml.cs">
       <DependentUpon>PantallaCuadratura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaDetalleBoleta.xaml.cs">
+      <DependentUpon>PantallaDetalleBoleta.xaml</DependentUpon>
     </Compile>
     <Compile Include="PantallaDetalleVenta.xaml.cs">
       <DependentUpon>PantallaDetalleVenta.xaml</DependentUpon>
