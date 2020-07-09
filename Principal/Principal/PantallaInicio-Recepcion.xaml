@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Principal"
         mc:Ignorable="d"
-        Title="PantallaInicio_Recepcion" Height="450" Width="800">
+        Title="PantallaInicio_Recepcion" Height="600" Width="800">
     <Grid>
         <Button x:Name="btnVentas" Content=" VENTAS" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
         <Button x:Name="btnCuadratura" Content="CUADRATURA" HorizontalAlignment="Left" Margin="0,166,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
@@ -20,7 +20,8 @@
         <Label x:Name="lblCodigo" Content="Código Registro" HorizontalAlignment="Left" Margin="194,123,0,0" VerticalAlignment="Top"/>
         <Label x:Name="btnCantidadVenta" Content="Cantidad Ventas" HorizontalAlignment="Left" Margin="194,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
         <Label x:Name="lblCódigoVendedor" Content="Código Vendedor" HorizontalAlignment="Left" Margin="462,22,0,0" VerticalAlignment="Top"/>
-        <DatePicker Margin="642,24,9.6,0" VerticalAlignment="Top"/>
+        <DatePicker Margin="639,24,9.6,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnConfirmar" Content="Confirmar inicio y recepcion de caja" HorizontalAlignment="Left" Margin="286,498,0,0" VerticalAlignment="Top" Width="264" Height="44"/>
 
     </Grid>
 </Window>

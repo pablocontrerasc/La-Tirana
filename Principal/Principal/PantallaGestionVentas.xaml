@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Principal"
         mc:Ignorable="d"
-        Title="PantallaGestionVentas" Height="450" Width="800">
+        Title="PantallaGestionVentas" Height="600
+        " Width="800">
     <Grid>
-        
+        <Button x:Name="btnVentas" Content=" VENTAS" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnCuadratura" Content="CUADRATURA" HorizontalAlignment="Left" Margin="0,166,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnHistorialV" Content="HISTORIAL DE VENTAS" HorizontalAlignment="Left" Margin="0,222,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnStock" Content="STOCK" HorizontalAlignment="Left" Margin="0,278,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <Button x:Name="btnUsuarios" Content="USUARIOS" HorizontalAlignment="Left" Margin="0,334,0,0" VerticalAlignment="Top" Width="132" Height="51"/>
+        <TextBox x:Name="txtCodigoRegistro" HorizontalAlignment="Left" Height="23" Margin="326,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
+        <TextBox x:Name="txtPrecio" HorizontalAlignment="Left" Height="23" Margin="326,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
+        <TextBox x:Name="txtCódigoV" HorizontalAlignment="Left" Height="23" Margin="569,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
+        <Label x:Name="lblNombre" Content="Nombre de Producto" HorizontalAlignment="Left" Margin="194,94,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCodigo" Content="Código " HorizontalAlignment="Left" Margin="194,123,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPrecio" Content="Precio" HorizontalAlignment="Left" Margin="194,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
+        <Label x:Name="lblCódigoVendedor" Content="Código Vendedor" HorizontalAlignment="Left" Margin="462,22,0,0" VerticalAlignment="Top"/>
+        <DatePicker Margin="639,24,9.6,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="326,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
+        <Label x:Name="lblCantidad" Content="Cantidad" HorizontalAlignment="Left" Margin="194,183,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
+        <Label x:Name="lblFormaPago" Content="Forma de Pago" HorizontalAlignment="Left" Margin="194,58,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="326,58,0,0" VerticalAlignment="Top" Width="116"/>
+        <DataGrid HorizontalAlignment="Left" Height="223" Margin="194,222,0,0" VerticalAlignment="Top" Width="534"/>
+        <Button x:Name="btnFinalizar" Content="Finalizar Venta" HorizontalAlignment="Left" Margin="194,514,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="txtNroOperacion" HorizontalAlignment="Left" Height="23" Margin="674,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <TextBox x:Name="txtNroBoleta" HorizontalAlignment="Left" Height="23" Margin="674,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <Label x:Name="lblNroOperacion" Content="N° Operacion" HorizontalAlignment="Left" Margin="569,92,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblNroBoleta" Content="N° Boleta" HorizontalAlignment="Left" Margin="569,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
+        <TextBox x:Name="txtStock" HorizontalAlignment="Left" Height="23" Margin="674,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <Label x:Name="lblStock" Content="Stock" HorizontalAlignment="Left" Margin="569,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
+        <TextBox x:Name="txtNombreProducto" HorizontalAlignment="Left" Height="23" Margin="326,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
+        <Button x:Name="btnLimpiar" Content="Limpiar Todo" HorizontalAlignment="Left" Margin="310,514,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="txtMontoAPagar" HorizontalAlignment="Left" Height="23" Margin="194,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
+        <TextBox x:Name="txtTotal" HorizontalAlignment="Left" Height="23" Margin="696,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <TextBox x:Name="txtDescuento" HorizontalAlignment="Left" Height="23" Margin="696,503,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <Label x:Name="lblTotal" Content="Total" HorizontalAlignment="Left" Margin="591,475,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDescuento" Content="Descuento" HorizontalAlignment="Left" Margin="591,504,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
+        <TextBox x:Name="txtTotalFinal" HorizontalAlignment="Left" Height="23" Margin="696,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <Label x:Name="lblTotalFinal" Content="Total Final" HorizontalAlignment="Left" Margin="591,535,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
+        <Button x:Name="btnCancelar" Content="Cancelar Venta" HorizontalAlignment="Left" Margin="421,514,0,0" VerticalAlignment="Top" Width="90"/>
+
     </Grid>
 </Window>
