@@ -24,5 +24,11 @@ namespace Principal
         {
             InitializeComponent();
         }
+
+        private void btnIngresar_Click(object sender, RoutedEventArgs e)
+        {
+            PantallaInicio_Recepcion P = new PantallaInicio_Recepcion();
+            P.ShowDialog();
+        }
     }
 }

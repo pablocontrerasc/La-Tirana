@@ -14,7 +14,7 @@
         <Label x:Name="lblUsuario" Content="Usuario" HorizontalAlignment="Left" Margin="266,285,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblContraseña" Content="Contraseña" HorizontalAlignment="Left" Margin="266,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.563,2.211"/>
         <ComboBox x:Name="cbxTipoUsuario" HorizontalAlignment="Left" Margin="403,365,0,0" VerticalAlignment="Top" Width="138"/>
-        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="324,424,0,0" VerticalAlignment="Top" Width="158" Height="40"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="324,424,0,0" VerticalAlignment="Top" Width="158" Height="40" Click="btnRegistrar_Click"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="348,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
         <TextBox x:Name="txtApellido" HorizontalAlignment="Left" Height="23" Margin="348,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
         <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="23" Margin="348,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
