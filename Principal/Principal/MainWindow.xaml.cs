@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Principal
 {
@@ -25,10 +28,46 @@ namespace Principal
             InitializeComponent();
         }
 
+        private void Limpiar()
+        {
+            txtUsuario.Text = "";
+            txtContraseña.Password = "";
+        }
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
         {
-            PantallaInicio_Recepcion P = new PantallaInicio_Recepcion();
-            P.ShowDialog();
+
+            if (txtUsuario.Text == "" || txtContraseña.Password == "")
+            {
+                MessageBox.Show("DEBE INGRESAR LOS DATOS", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Limpiar();
+            }
+            else
+            {
+                if (txtUsuario.Text == "and" && txtContraseña.Password == "123")
+                {
+                    PantallaGestionVentas p = new PantallaGestionVentas();
+                    p.ShowDialog();
+                    Limpiar();
+                }
+                else if(txtUsuario.Text == "res" && txtContraseña.Password == "456")
+                {
+                    PantallaGestionVentas p = new PantallaGestionVentas();
+                    p.ShowDialog();
+                    Limpiar();
+                }
+                else if (txtUsuario.Text == "shot" && txtContraseña.Password == "789")
+                {
+                    PantallaGestionVentas p = new PantallaGestionVentas();
+                    p.ShowDialog();
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    Limpiar();
+                }
+            }
+
         }
     }
 }

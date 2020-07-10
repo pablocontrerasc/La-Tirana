@@ -55,7 +55,7 @@ namespace Principal
                         empleado.Nombre = txtNombre.Text;
                         empleado.Apellido = txtApellido.Text;
                         empleado.Usuario = txtUsuario.Text;
-                        empleado.Contraseña = txtContraseña.Text;
+                        empleado.Contrasena = txtContraseña.Text;
                         empleado.idCargo = (int)cbxTipoUsuario.SelectedValue;
                         empleado.CodVendedor = Numero();
                     };

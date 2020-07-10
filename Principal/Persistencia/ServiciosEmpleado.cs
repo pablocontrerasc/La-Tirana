@@ -34,7 +34,7 @@ namespace Persistencia
                 empleado.Nombre = entity.Nombre;
                 empleado.Apellido = entity.Apellido;
                 empleado.Usuario = entity.Usuario;
-                empleado.Contraseña = entity.Contraseña;
+                empleado.Contrasena = entity.Contrasena;
                 empleado.idCargo = entity.idCargo;
              
                 return em.SaveChanges();

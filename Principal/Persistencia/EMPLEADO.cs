@@ -24,7 +24,7 @@ namespace Persistencia
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Usuario { get; set; }
-        public string Contraseña { get; set; }
+        public string Contrasena { get; set; }
         public Nullable<int> idCargo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
