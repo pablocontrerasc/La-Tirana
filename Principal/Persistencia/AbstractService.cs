@@ -8,6 +8,8 @@ namespace Persistencia
 {
     public abstract class AbstractService<T>
     {
+        protected LaTiranaEntities em = new LaTiranaEntities();
+
         public abstract int AddEntity(T entity);
         public abstract int UpdateEntity(T entity);
         public abstract T GetEntity(object key);
