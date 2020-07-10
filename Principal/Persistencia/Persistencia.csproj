@@ -92,12 +92,6 @@
     <Compile Include="ServiciosProducto.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Principal\Principal.csproj">
-      <Project>{e2396fe9-0c5d-42f1-81d1-b83b3da01f5c}</Project>
-      <Name>Principal</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
     <EntityDeploy Include="ModeloLaTirana.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
