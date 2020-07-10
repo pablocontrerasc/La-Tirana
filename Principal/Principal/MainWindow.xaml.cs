@@ -47,18 +47,24 @@ namespace Principal
                 {
                     PantallaGestionVentas p = new PantallaGestionVentas();
                     p.ShowDialog();
+                    p.txtCódigoV.Text = "001";
+                    p.dtFecha.SelectedDate = DateTime.Now;
                     Limpiar();
                 }
                 else if(txtUsuario.Text == "res" && txtContraseña.Password == "456")
                 {
                     PantallaGestionVentas p = new PantallaGestionVentas();
                     p.ShowDialog();
+                    p.txtCódigoV.Text = "002";
+                    p.dtFecha.SelectedDate = DateTime.Now;
                     Limpiar();
                 }
                 else if (txtUsuario.Text == "shot" && txtContraseña.Password == "789")
                 {
                     PantallaGestionVentas p = new PantallaGestionVentas();
                     p.ShowDialog();
+                    p.txtCódigoV.Text = "003";
+                    p.dtFecha.SelectedDate = DateTime.Now;
                     Limpiar();
                 }
                 else

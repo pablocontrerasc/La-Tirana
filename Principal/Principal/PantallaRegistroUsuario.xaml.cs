@@ -78,6 +78,7 @@ namespace Principal
             cbxTipoUsuario.DisplayMemberPath = "Nombre";
         }
 
+
         public static int Numero()
         {
             using (SqlConnection cn = new SqlConnection("Data Source=ANDREEEEES\\SQLEXPRESS;Initial Catalog=LaTirana;Integrated Security=True"))

@@ -26,25 +26,25 @@
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="199" Margin="156,27,0,0" Stroke="Black" VerticalAlignment="Top" Width="610"/>
         <TextBox x:Name="txtCodigoRegistro" HorizontalAlignment="Left" Height="23" Margin="292,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
         <TextBox x:Name="txtPrecio" HorizontalAlignment="Left" Height="23" Margin="292,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
-        <TextBox x:Name="txtCódigoV" HorizontalAlignment="Left" Height="23" Margin="535,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
+        <TextBox x:Name="txtCódigoV" HorizontalAlignment="Left" Height="23" Margin="535,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" Text="1"/>
         <Label x:Name="lblNombre" Content="Nombre de Producto" HorizontalAlignment="Left" Margin="160,108,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblCodigo" Content="Código " HorizontalAlignment="Left" Margin="160,137,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPrecio" Content="Precio" HorizontalAlignment="Left" Margin="160,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
         <Label x:Name="lblCódigoVendedor" Content="Código Vendedor" HorizontalAlignment="Left" Margin="428,36,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dtFecha" Margin="605,38,43.6,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="292,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
+        <TextBox x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="292,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" LostFocus="txtCantidad_LostFocus"/>
         <Label x:Name="lblCantidad" Content="Cantidad" HorizontalAlignment="Left" Margin="160,197,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
         <Label x:Name="lblFormaPago" Content="Forma de Pago" HorizontalAlignment="Left" Margin="160,72,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="292,72,0,0" VerticalAlignment="Top" Width="116"/>
+        <ComboBox x:Name="cbxFormaPago" HorizontalAlignment="Left" Margin="292,72,0,0" VerticalAlignment="Top" Width="116"/>
         <TextBox x:Name="txtNroOperacion" HorizontalAlignment="Left" Height="23" Margin="640,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
         <TextBox x:Name="txtNroBoleta" HorizontalAlignment="Left" Height="23" Margin="640,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
         <Label x:Name="lblNroOperacion" Content="N° Operacion" HorizontalAlignment="Left" Margin="535,106,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblNroBoleta" Content="N° Boleta" HorizontalAlignment="Left" Margin="535,135,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
         <TextBox x:Name="txtStock" HorizontalAlignment="Left" Height="23" Margin="640,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
         <Label x:Name="lblStock" Content="Stock" HorizontalAlignment="Left" Margin="535,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
-        <TextBox x:Name="txtNombreProducto" HorizontalAlignment="Left" Height="23" Margin="292,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
-        <DataGrid HorizontalAlignment="Left" Height="226" Margin="156,235,0,0" VerticalAlignment="Top" Width="610"/>
+        <DataGrid x:Name="dgListaProducto" HorizontalAlignment="Left" Height="226" Margin="156,235,0,0" VerticalAlignment="Top" Width="610"/>
         <Button x:Name="btnCerrar" Content="CERRAR SESION" HorizontalAlignment="Left" Margin="0,390,0,0" VerticalAlignment="Top" Width="132" Height="51" Click="btnCerrar_Click"/>
+        <ComboBox x:Name="cbxNombreProducto" HorizontalAlignment="Left" Margin="292,106,0,0" VerticalAlignment="Top" Width="208" SelectionChanged="cbxNombreProducto_SelectionChanged"/>
 
     </Grid>
 </Window>
