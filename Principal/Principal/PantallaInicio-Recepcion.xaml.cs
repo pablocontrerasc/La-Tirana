@@ -99,6 +99,7 @@ namespace Principal
                 p.txtNroBoleta.Text = NroBoleta().ToString();
                 p.txtNroOperacion.Text = NroOperacion().ToString();
                 p.ShowDialog();
+
            }
         }
     }
