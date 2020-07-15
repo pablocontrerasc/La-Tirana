@@ -23,6 +23,7 @@ namespace Persistencia
         public Nullable<int> idVendedor { get; set; }
         public Nullable<int> idProducto { get; set; }
         public Nullable<int> NroBoleta { get; set; }
+        public Nullable<int> Precio { get; set; }
     
         public virtual EMPLEADO EMPLEADO { get; set; }
         public virtual FORMA_PAGO FORMA_PAGO { get; set; }

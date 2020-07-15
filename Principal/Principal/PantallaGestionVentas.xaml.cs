@@ -105,13 +105,14 @@ namespace Principal
 
         public void Cargar()
         {
+
             var cod = int.Parse(txtNroBoleta.Text);
             ServiciosBoleta boleta = new ServiciosBoleta();
             ServiciosProducto producto = new ServiciosProducto();
             var listadoproducto = from b in boleta.GetEntities()
                                   join p in producto.GetEntities()
                                   on b.idProducto equals p.idProducto
-                                  where int.Parse(txtNroBoleta.Text) == cod
+                                  where b.NroBoleta == cod
                                   select new
                                   {
                                       Codigo = p.idProducto,
@@ -129,7 +130,7 @@ namespace Principal
         {
             BOLETA b = new BOLETA()
             {
-                idBoleta = NroBoleta(),
+
                 NroBoleta = int.Parse(txtNroBoleta.Text),
                 NroOperacion = int.Parse(txtNroOperacion.Text),
                 MontoTotal = int.Parse(txtTotalFinal.Text),
@@ -138,6 +139,7 @@ namespace Principal
                 idFormaPago = (int)cbxFormaPago.SelectedValue,
                 idVendedor = int.Parse(txtCódigoV.Text),
                 idProducto = (int)cbxNombreProducto.SelectedValue,
+                Precio = int.Parse(txtPrecio.Text)
 
             };
             ServiciosBoleta servicio = new ServiciosBoleta();
@@ -159,10 +161,28 @@ namespace Principal
             }
         }
 
+        public int ValorTotal()
+        {
+            using (SqlConnection cn = new SqlConnection("Data Source=ANDREEEEES\\SQLEXPRESS;Initial Catalog=LaTirana;Integrated Security=True"))
+            {
+                
+                cn.Open();
+                string sql = "SELECT SUM(Precio) FROM BOLETA WHERE NroBoleta =" +  txtNroBoleta.Text;
+                SqlCommand cmd = new SqlCommand(sql, cn);
+
+                int Resultado = 0;
+                int.TryParse(cmd.ExecuteScalar().ToString(), out Resultado);
+
+                return Resultado;
+            }
+        }
+
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             Cargar();
             Registrar();
+            txtTotalFinal.Text = ValorTotal().ToString();
+            Cargar();
 
         }
 
@@ -174,7 +194,8 @@ namespace Principal
             txtPrecio.Text = string.Empty;
             txtStock.Text = string.Empty;
             txtCantidad.Text = string.Empty;
-            txtMontoAPagar.Text = string.Empty;
+            txtTotalFinal.Text = string.Empty;
+            txtNroBoleta.Text = NroBoleta().ToString();
 
         }
     }

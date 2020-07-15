@@ -20,7 +20,7 @@
         <TextBox x:Name="txtDescuento" HorizontalAlignment="Left" Height="23" Margin="696,503,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
         <Label x:Name="lblTotal" Content="Total" HorizontalAlignment="Left" Margin="591,475,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblDescuento" Content="Descuento" HorizontalAlignment="Left" Margin="591,504,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
-        <TextBox x:Name="txtTotalFinal" HorizontalAlignment="Left" Height="23" Margin="696,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <TextBox x:Name="txtTotalFinal" HorizontalAlignment="Left" Height="23" Margin="696,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Text="0"/>
         <Label x:Name="lblTotalFinal" Content="Total Final" HorizontalAlignment="Left" Margin="591,535,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.578,-0.07"/>
         <Button x:Name="btnCancelar" Content="Cancelar Venta" HorizontalAlignment="Left" Margin="421,514,0,0" VerticalAlignment="Top" Width="90"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="199" Margin="156,27,0,0" Stroke="Black" VerticalAlignment="Top" Width="610"/>
