@@ -21,9 +21,12 @@ namespace Persistencia
         public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> idFormaPago { get; set; }
         public Nullable<int> idVendedor { get; set; }
+        public Nullable<int> idProducto { get; set; }
+        public Nullable<int> NroBoleta { get; set; }
     
         public virtual EMPLEADO EMPLEADO { get; set; }
         public virtual FORMA_PAGO FORMA_PAGO { get; set; }
         public virtual DETALLE_COMPRA DETALLE_COMPRA { get; set; }
+        public virtual PRODUCTO PRODUCTO { get; set; }
     }
 }

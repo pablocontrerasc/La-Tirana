@@ -18,6 +18,7 @@ namespace Persistencia
         public PRODUCTO()
         {
             this.DETALLE_COMPRA = new HashSet<DETALLE_COMPRA>();
+            this.BOLETA = new HashSet<BOLETA>();
         }
     
         public int idProducto { get; set; }
@@ -27,5 +28,7 @@ namespace Persistencia
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DETALLE_COMPRA> DETALLE_COMPRA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BOLETA> BOLETA { get; set; }
     }
 }

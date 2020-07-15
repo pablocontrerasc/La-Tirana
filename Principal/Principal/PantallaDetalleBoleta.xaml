@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Principal"
         mc:Ignorable="d"
-        Title="PantallaDetalleBoleta" Height="600" Width="800">
+        Title="PantallaDetalleBoleta" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="btnVentas" Content=" VENTAS" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Width="132" Height="51" Click="btnVentas_Click"/>
         <Button x:Name="btnCuadratura" Content="CUADRATURA" HorizontalAlignment="Left" Margin="0,166,0,0" VerticalAlignment="Top" Width="132" Height="51" Click="btnCuadratura_Click"/>

@@ -43,28 +43,30 @@ namespace Principal
             }
             else
             {
-                if (txtUsuario.Text == "and" && txtContraseña.Password == "123")
+                if (txtUsuario.Text == "Pabcontreras" && txtContraseña.Password == "123")
                 {
-                    PantallaGestionVentas p = new PantallaGestionVentas();
+                    PantallaInicio_Recepcion p = new PantallaInicio_Recepcion();
+                    p.txtNombreVendedor.Text = "Pablo Adrian Contreras";
+                    p.txtCodigoRegistro.Text = "1002";
+                    p.txtCódigoV.Text = "01"; 
                     p.ShowDialog();
-                    p.txtCódigoV.Text = "001";
-                    p.dtFecha.SelectedDate = DateTime.Now;
+                    
                     Limpiar();
                 }
-                else if(txtUsuario.Text == "res" && txtContraseña.Password == "456")
+                else if(txtUsuario.Text == "Elivasquez" && txtContraseña.Password == "123")
                 {
-                    PantallaGestionVentas p = new PantallaGestionVentas();
-                    p.ShowDialog();
-                    p.txtCódigoV.Text = "002";
-                    p.dtFecha.SelectedDate = DateTime.Now;
+                    PantallaInicio_Recepcion p = new PantallaInicio_Recepcion();
+                    p.txtNombreVendedor.Text = "José Elias Vasquez";
+                    p.txtCodigoRegistro.Text = "1003";
+                    p.txtCódigoV.Text = "02";
                     Limpiar();
                 }
-                else if (txtUsuario.Text == "shot" && txtContraseña.Password == "789")
+                else if (txtUsuario.Text == "Andfuentes" && txtContraseña.Password == "123")
                 {
-                    PantallaGestionVentas p = new PantallaGestionVentas();
-                    p.ShowDialog();
-                    p.txtCódigoV.Text = "003";
-                    p.dtFecha.SelectedDate = DateTime.Now;
+                    PantallaInicio_Recepcion p = new PantallaInicio_Recepcion();
+                    p.txtNombreVendedor.Text = "José Elias Vasquez";
+                    p.txtCodigoRegistro.Text = "1004";
+                    p.txtCódigoV.Text = "04";
                     Limpiar();
                 }
                 else

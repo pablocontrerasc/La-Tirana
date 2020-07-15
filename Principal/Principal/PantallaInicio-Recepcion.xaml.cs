@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,48 @@ namespace Principal
         private void btnCerrar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public static int NroBoleta()
+        {
+            using (SqlConnection cn = new SqlConnection("Data Source=ANDREEEEES\\SQLEXPRESS;Initial Catalog=LaTirana;Integrated Security=True"))
+            {
+                cn.Open();
+                string sql = "SELECT MAX(NroBoleta) FROM BOLETA";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+
+                int MaxNumero = 0;
+                int.TryParse(cmd.ExecuteScalar().ToString(), out MaxNumero);
+
+                return MaxNumero + 1;
+            }
+        }
+        public static int NroOperacion()
+        {
+            using (SqlConnection cn = new SqlConnection("Data Source=ANDREEEEES\\SQLEXPRESS;Initial Catalog=LaTirana;Integrated Security=True"))
+            {
+                cn.Open();
+                string sql = "SELECT MAX(NroOperacion) FROM BOLETA";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+
+                int MaxNumero = 0;
+                int.TryParse(cmd.ExecuteScalar().ToString(), out MaxNumero);
+
+                return MaxNumero + 501;
+            }
+        }
+
+        private void btnConfirmar_Click(object sender, RoutedEventArgs e)
+        {
+           var mensaje = MessageBox.Show("DESEA CONTINUAR CON ESTA OPERACION", "mensaje", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+           if(mensaje == MessageBoxResult.Yes)
+           {
+                PantallaGestionVentas p = new PantallaGestionVentas();
+                p.txtCódigoV.Text = "1001";
+                p.txtNroBoleta.Text = NroBoleta().ToString();
+                p.txtNroOperacion.Text = NroOperacion().ToString();
+                p.ShowDialog();
+           }
         }
     }
 }

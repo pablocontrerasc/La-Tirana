@@ -26,7 +26,7 @@ namespace Principal
             InitializeComponent();
             CargarFormaPago();
             CargarProductos();
-         
+
         }
 
         private void btnVentas_Click(object sender, RoutedEventArgs e)
@@ -82,20 +82,6 @@ namespace Principal
             cbxNombreProducto.DisplayMemberPath = "Nombre";
         }
 
-        public static int Numero()
-        {
-            using (SqlConnection cn = new SqlConnection("Data Source=ANDREEEEES\\SQLEXPRESS;Initial Catalog=LaTirana;Integrated Security=True"))
-            {
-                cn.Open();
-                string sql = "SELECT MAX(idBoleta) FROM BOLETA";
-                SqlCommand cmd = new SqlCommand(sql, cn);
-
-                int MaxNumero = 0;
-                int.TryParse(cmd.ExecuteScalar().ToString(), out MaxNumero);
-
-                return MaxNumero + 10001;
-            }
-        }
 
         private void cbxNombreProducto_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -119,10 +105,13 @@ namespace Principal
 
         public void Cargar()
         {
-            var cod = int.Parse(txtCodigoRegistro.Text);
+            var cod = int.Parse(txtNroBoleta.Text);
+            ServiciosBoleta boleta = new ServiciosBoleta();
             ServiciosProducto producto = new ServiciosProducto();
-            var listadoproducto = from p in producto.GetEntities()
-                                  where p.idProducto == cod
+            var listadoproducto = from b in boleta.GetEntities()
+                                  join p in producto.GetEntities()
+                                  on b.idProducto equals p.idProducto
+                                  where int.Parse(txtNroBoleta.Text) == cod
                                   select new
                                   {
                                       Codigo = p.idProducto,
@@ -136,9 +125,57 @@ namespace Principal
             dgListaProducto.Items.Refresh();
         }
 
-        private void txtCantidad_LostFocus(object sender, RoutedEventArgs e)
+        private void Registrar()
+        {
+            BOLETA b = new BOLETA()
+            {
+                idBoleta = NroBoleta(),
+                NroBoleta = int.Parse(txtNroBoleta.Text),
+                NroOperacion = int.Parse(txtNroOperacion.Text),
+                MontoTotal = int.Parse(txtTotalFinal.Text),
+                CantidadProducto = int.Parse(txtCantidad.Text),
+                //Fecha = Convert.ToDateTime(dtFecha.SelectedDate),
+                idFormaPago = (int)cbxFormaPago.SelectedValue,
+                idVendedor = int.Parse(txtCódigoV.Text),
+                idProducto = (int)cbxNombreProducto.SelectedValue,
+
+            };
+            ServiciosBoleta servicio = new ServiciosBoleta();
+            servicio.AddEntity(b);
+        }
+
+        public static int NroBoleta()
+        {
+            using (SqlConnection cn = new SqlConnection("Data Source=ANDREEEEES\\SQLEXPRESS;Initial Catalog=LaTirana;Integrated Security=True"))
+            {
+                cn.Open();
+                string sql = "SELECT MAX(NroBoleta) FROM BOLETA";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+
+                int MaxNumero = 0;
+                int.TryParse(cmd.ExecuteScalar().ToString(), out MaxNumero);
+
+                return MaxNumero + 1;
+            }
+        }
+
+        private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             Cargar();
+            Registrar();
+
+        }
+
+        private void btnFinalizar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("VENTA REGISTRADA", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Information);
+            cbxFormaPago.SelectedIndex = -1;
+            cbxNombreProducto.SelectedIndex = -1;
+            txtPrecio.Text = string.Empty;
+            txtStock.Text = string.Empty;
+            txtCantidad.Text = string.Empty;
+            txtMontoAPagar.Text = string.Empty;
+
         }
     }
 }

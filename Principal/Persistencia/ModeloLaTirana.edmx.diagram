@@ -16,6 +16,7 @@
         <AssociationConnector Association="LaTiranaModel.FK_DETALLE_COMPRA_BOLETA" ManuallyRouted="false" />
         <AssociationConnector Association="LaTiranaModel.FK_EMPLEADO_CARGO" ManuallyRouted="false" />
         <AssociationConnector Association="LaTiranaModel.FK_DETALLE_COMPRA_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTiranaModel.FK_BOLETA_PRODUCTO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

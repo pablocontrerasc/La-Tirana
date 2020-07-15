@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LaTiranaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LaTiranaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BOLETA">
           <Key>
             <PropertyRef Name="idBoleta" />
@@ -16,6 +16,8 @@
           <Property Name="Fecha" Type="date" />
           <Property Name="idFormaPago" Type="int" />
           <Property Name="idVendedor" Type="int" />
+          <Property Name="idProducto" Type="int" />
+          <Property Name="NroBoleta" Type="int" />
         </EntityType>
         <EntityType Name="CARGO">
           <Key>
@@ -87,6 +89,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_BOLETA_PRODUCTO">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
+          <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="BOLETA">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DETALLE_COMPRA_BOLETA">
           <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="1" />
           <End Role="DETALLE_COMPRA" Type="Self.DETALLE_COMPRA" Multiplicity="0..1" />
@@ -138,6 +152,10 @@
             <End Role="FORMA_PAGO" EntitySet="FORMA_PAGO" />
             <End Role="BOLETA" EntitySet="BOLETA" />
           </AssociationSet>
+          <AssociationSet Name="FK_BOLETA_PRODUCTO" Association="Self.FK_BOLETA_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="BOLETA" EntitySet="BOLETA" />
+          </AssociationSet>
           <AssociationSet Name="FK_DETALLE_COMPRA_BOLETA" Association="Self.FK_DETALLE_COMPRA_BOLETA">
             <End Role="BOLETA" EntitySet="BOLETA" />
             <End Role="DETALLE_COMPRA" EntitySet="DETALLE_COMPRA" />
@@ -151,8 +169,7 @@
             <End Role="EMPLEADO" EntitySet="EMPLEADO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LaTiranaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -170,6 +187,9 @@
           <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_BOLETA_EMPLEADO" FromRole="BOLETA" ToRole="EMPLEADO" />
           <NavigationProperty Name="FORMA_PAGO" Relationship="Self.FK_BOLETA_FORMA_PAGO" FromRole="BOLETA" ToRole="FORMA_PAGO" />
           <NavigationProperty Name="DETALLE_COMPRA" Relationship="Self.FK_DETALLE_COMPRA_BOLETA" FromRole="BOLETA" ToRole="DETALLE_COMPRA" />
+          <Property Name="idProducto" Type="Int32" />
+          <NavigationProperty Name="PRODUCTO" Relationship="LaTiranaModel.FK_BOLETA_PRODUCTO" FromRole="BOLETA" ToRole="PRODUCTO" />
+          <Property Name="NroBoleta" Type="Int32" />
         </EntityType>
         <EntityType Name="CARGO">
           <Key>
@@ -223,6 +243,7 @@
           <Property Name="Stock" Type="Int32" />
           <Property Name="Precio" Type="Int32" />
           <NavigationProperty Name="DETALLE_COMPRA" Relationship="Self.FK_DETALLE_COMPRA_PRODUCTO" FromRole="PRODUCTO" ToRole="DETALLE_COMPRA" />
+          <NavigationProperty Name="BOLETA" Relationship="LaTiranaModel.FK_BOLETA_PRODUCTO" FromRole="PRODUCTO" ToRole="BOLETA" />
         </EntityType>
         <Association Name="FK_BOLETA_EMPLEADO">
           <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
@@ -311,7 +332,23 @@
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
             <End Role="DETALLE_COMPRA" EntitySet="DETALLE_COMPRA" />
           </AssociationSet>
+          <AssociationSet Name="FK_BOLETA_PRODUCTO" Association="LaTiranaModel.FK_BOLETA_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="BOLETA" EntitySet="BOLETA" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_BOLETA_PRODUCTO">
+          <End Type="LaTiranaModel.PRODUCTO" Role="PRODUCTO" Multiplicity="0..1" />
+          <End Type="LaTiranaModel.BOLETA" Role="BOLETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="BOLETA">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -321,6 +358,8 @@
           <EntitySetMapping Name="BOLETA">
             <EntityTypeMapping TypeName="LaTiranaModel.BOLETA">
               <MappingFragment StoreEntitySet="BOLETA">
+                <ScalarProperty Name="NroBoleta" ColumnName="NroBoleta" />
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
                 <ScalarProperty Name="idBoleta" ColumnName="idBoleta" />
                 <ScalarProperty Name="NroOperacion" ColumnName="NroOperacion" />
                 <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
